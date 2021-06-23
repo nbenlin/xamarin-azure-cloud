@@ -53,17 +53,18 @@ namespace projectCdv.Helpers
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage(HttpMethod.Post, Constants.AzureFunctionPostURL))
             {
-                var json = JsonConvert.SerializeObject(user);
-                using (var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
+                //var json = JsonConvert.SerializeObject(user);
+                //using (var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
                 {
-                    request.Content = stringContent;
-
-                    using (HttpResponseMessage response = await client
-                        .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false))
-                    {
-                        response.EnsureSuccessStatusCode();
-                    }
+                    //request.Content = stringContent;
+                    var content = JsonConvert.SerializeObject(user);
+                    //using (HttpResponseMessage response = await client
+                    //   .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                    //    .ConfigureAwait(false))
+                    // {
+                    //    response.EnsureSuccessStatusCode();
+                    //}
+                    HttpResponseMessage hrm = await client.PostAsync(Constants.AzureFunctionPostURL, new StringContent(content, System.Text.Encoding.UTF8, "application/json"));
                 }
             }
         }

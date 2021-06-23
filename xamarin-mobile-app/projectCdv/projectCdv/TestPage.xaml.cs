@@ -33,12 +33,21 @@ namespace projectCdv
 
         private async void userSaveButton_Clicked(object sender, EventArgs e)
         {
-            User user = new User
+            try
             {
-                Email = userEmail.Text,
-                Password = userPassword.Text
-            };
-            await _restService.SaveUserAsync(user);
+                User user = new User
+                {
+                    Email = userEmail.Text,
+                    Password = userPassword.Text
+                };
+                await _restService.SaveUserAsync(user);
+                await DisplayAlert("Successfull", "Inserted to database.", "Ok");
+            }
+            catch
+            {
+                await DisplayAlert("Failure", "Error inserto to database", "Ok");
+            }
+            
         }
     }
 }

@@ -5,7 +5,9 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Button Text="Get Data"
-                 Clicked="OnButtonClicked"/>
+                    Clicked="OnButtonClicked"
+                    Style="{StaticResource normalButton}"
+                    Margin="70,40,70,0"/>
             <CollectionView x:Name="collectionView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -24,7 +26,7 @@
             </CollectionView>
             <Entry x:Name="userEmail" Placeholder="email" Keyboard="Email" />
             <Entry x:Name="userPassword" Placeholder="password" IsPassword="True" />
-            <Button x:Name="userSaveButton" Text="Save" Clicked="userSaveButton_Clicked" />
+            <Button x:Name="userSaveButton" Text="Save" Clicked="userSaveButton_Clicked" Style="{StaticResource normalButton}" Margin="70,40,70,0" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

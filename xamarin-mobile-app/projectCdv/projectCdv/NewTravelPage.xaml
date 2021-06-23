@@ -4,7 +4,7 @@
              x:Class="projectCdv.NewTravelPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Command="{Binding PostCommand}" CommandParameter="{Binding Post}" />
+        <ToolbarItem Text="Save" Icon="ic_action_save.png" Priority="0" Order="Primary" Command="{Binding PostCommand}" CommandParameter="{Binding Post}" />
     </ContentPage.ToolbarItems>
     
     

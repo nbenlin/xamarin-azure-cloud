@@ -1,22 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="projectCdv.MainPage">
+             x:Class="projectCdv.MainPage"
+             Title="Travel Record Application">
+
+    <NavigationPage.TitleView>
+        <Label Text="Travel Record Application" HorizontalOptions="Center" TextColor="White" FontSize="Large" />
+    </NavigationPage.TitleView>
+
 
     <StackLayout VerticalOptions="Center"
                  Margin="20">
+        <Image Source="vw.png" Margin="10" />
         <Entry x:Name="emailEntry"
+               Margin="40,10,40,5"
                Text="{Binding Email, Mode=TwoWay}"
                Placeholder="Email address"
                TextColor="{StaticResource blueColor}"
                Keyboard="Email"/>
         <Entry x:Name="passwordEntry"
+               Margin="40,10,40,5"
                Text="{Binding Password, Mode=TwoWay}"
                Placeholder="Password"
                TextColor="{StaticResource blueColor}"
                IsPassword="True"/>
         <Button x:Name="LoginButton"
-                Margin="0,50,0,0"
+                Margin="70,50,70,5"
                 Text="Log in"
                 Command="{Binding LoginCommand}"
                 CommandParameter="{Binding User}"

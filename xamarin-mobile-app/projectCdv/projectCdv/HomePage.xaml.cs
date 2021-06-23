@@ -14,11 +14,21 @@ namespace projectCdv
     public partial class HomePage : TabbedPage
     {
         HomeViewModel viewModel;
+
+  
         public HomePage()
         {
             InitializeComponent();
             viewModel = new HomeViewModel();
             BindingContext = viewModel;
+            new ToolbarItem() { Icon = "ic_action_add.png" };
+
+            IconImageSource = "ic_action_person.png";
+            IconImageSource = "ic_action_place.png";
+            IconImageSource = "ic_action_home.png";
+            IconImageSource = "ic_action_settings_input_hdmi.png";
         }
+        
+        
     }
 }

@@ -21,8 +21,7 @@ namespace projectCdv
 
             viewModel = new MainViewModel();
             BindingContext = viewModel;
-
-            //iconImage.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.plane.png", assembly);
+            
         }
     }
 }

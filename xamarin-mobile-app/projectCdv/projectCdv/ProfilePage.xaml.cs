@@ -16,6 +16,8 @@ namespace projectCdv
         public ProfilePage()
         {
             InitializeComponent();
+            new ToolbarItem() { Icon = "ic_action_profile.png" };
+
         }
 
         protected override async void OnAppearing()

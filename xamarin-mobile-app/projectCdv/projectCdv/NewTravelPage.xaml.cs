@@ -25,6 +25,8 @@ namespace projectCdv
 
             viewModel = new NewTravelViewModel();
             BindingContext = viewModel;
+
+            new ToolbarItem() { Icon = "ic_action_save.png" };
         }
 
 
@@ -41,16 +43,6 @@ namespace projectCdv
         }
         
 
-        private async void btnGetLocation_Clicked(object sender, EventArgs e)
-        {
-            /*
-            var location = await Localization.GetMyLocation();
-            var encodedLocation = await location.EncodeLocation();
-            var placemarks = await Geocoding.GetPlacemarksAsync(location.Latitude, location.Longitude);
-            var placemarkDetails = placemarks?.FirstOrDefault();
-            var amk = placemarkDetails.Locality;
-            */
-                
-        }
+   
     }
 }

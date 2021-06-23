@@ -4,9 +4,8 @@
              x:Class="projectCdv.MapPage">
 
 
-    
+
     <ListView x:Name="placesListView" ItemSelected="placesListView_ItemSelected" ItemsSource="{Binding Posts}">
-        
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding City}" Detail="{Binding Country}" />

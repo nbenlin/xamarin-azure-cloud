@@ -5,12 +5,12 @@
              xmlns:local='clr-namespace:projectCdv'>
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding NavCommand}" />
+        <ToolbarItem Text="Add" Icon="ic_action_add.png" Priority="0" Order="Primary" Command="{Binding NavCommand}" />
     </TabbedPage.ToolbarItems>
 
-    <local:HistoryPage Title="History" />
-    <local:MapPage Title="Places" />
-    <local:ProfilePage Title="Profile" />
-    <local:TestPage Title="Test" />
+    <local:HistoryPage Title="History" IconImageSource="ic_action_home.png" />
+    <local:MapPage Title="Places" IconImageSource="ic_action_place.png" />
+    <local:ProfilePage Title="Profile" IconImageSource="ic_action_person.png" />
+    <local:TestPage Title="Test" IconImageSource="ic_action_settings_input_hdmi.png" />
 
 </TabbedPage>

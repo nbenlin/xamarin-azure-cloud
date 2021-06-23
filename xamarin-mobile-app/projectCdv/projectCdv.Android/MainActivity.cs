@@ -10,6 +10,7 @@ using Plugin.Permissions;
 using Android.Views;
 using Android.Graphics;
 using Xamarin.Essentials;
+using Plugin.CurrentActivity;
 
 namespace projectCdv.Droid
 {
@@ -22,6 +23,7 @@ namespace projectCdv.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             CurrentPlatform.Init();
 

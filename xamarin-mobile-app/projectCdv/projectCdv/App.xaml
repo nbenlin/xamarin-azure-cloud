@@ -7,10 +7,12 @@
             <Color x:Key="blueColor">#EBB124</Color>
             <Color x:Key="whiteColor">#FFFFFF</Color>
             <Color x:Key="redColor">#34EB8A</Color>
+            <Color x:Key="whiteBlueColor">#52b69a</Color>
 
             <Style x:Key="normalButton"  TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource blueColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource whiteColor}"/>
+                <Setter Property="CornerRadius" Value="15" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

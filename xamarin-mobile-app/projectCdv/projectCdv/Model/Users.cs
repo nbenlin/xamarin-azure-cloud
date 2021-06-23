@@ -97,6 +97,15 @@ namespace projectCdv.Model
             // For azure app service ( web api )
             //await App.MobileService.GetTable<Users>().InsertAsync(user
         }
+        private string pictureBase64;
+
+        public string PictureBase64
+        {
+            get { return pictureBase64; }
+            set { pictureBase64 = value; OnPropertyChanged("PictureBase64"); }
+
+        }
+
 
     }
 }

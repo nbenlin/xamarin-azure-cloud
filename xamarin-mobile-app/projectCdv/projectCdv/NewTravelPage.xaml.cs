@@ -1,4 +1,6 @@
 ﻿    using Plugin.Geolocator;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using projectCdv.Helpers;
 using projectCdv.Logic;
 using projectCdv.Model;
@@ -19,6 +21,8 @@ namespace projectCdv
     public partial class NewTravelPage : ContentPage
     {
         NewTravelViewModel viewModel;
+        private object image1;
+
         public NewTravelPage()
         {
             InitializeComponent();
@@ -41,8 +45,45 @@ namespace projectCdv
             //var venues = await Venue.GetVenues(position.Latitude, position.Longitude);
            // venueListView.ItemsSource = venues;
         }
-        
 
-   
+        private async void selectPictureButton_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Error", "This is not support on your device", "Ok");
+                return;
+            }
+            var mediaOptions = new PickMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium
+            };
+            var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
+
+            if (selectedImage == null)
+            {
+                await DisplayAlert("Error", "There was an error to get your picture", "Ok");
+                return;
+            }
+
+            selectedImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+        }
+
+        private async void addPictureButton_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = await MediaPicker.CapturePhotoAsync();
+
+                var stream = await result.OpenReadAsync();
+                resultImage.Source = ImageSource.FromStream(() => stream);
+            }
+            catch(Exception)
+            {
+                await DisplayAlert("Failure", "You didn't save image", "Ok");
+            }
+
+        }
     }
 }

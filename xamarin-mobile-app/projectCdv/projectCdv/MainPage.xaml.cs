@@ -23,5 +23,6 @@ namespace projectCdv
             BindingContext = viewModel;
             
         }
+        
     }
 }

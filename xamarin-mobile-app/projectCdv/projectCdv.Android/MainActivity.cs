@@ -7,6 +7,9 @@ using Android.OS;
 using System.IO;
 using Microsoft.WindowsAzure.MobileServices;
 using Plugin.Permissions;
+using Android.Views;
+using Android.Graphics;
+using Xamarin.Essentials;
 
 namespace projectCdv.Droid
 {
@@ -25,7 +28,7 @@ namespace projectCdv.Droid
             // SQLite database
             string dbName = "travel_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fullPath = Path.Combine(folderPath, dbName);
+            string fullPath = System.IO.Path.Combine(folderPath, dbName);
 
             LoadApplication(new App(fullPath));
         }
@@ -39,5 +42,7 @@ namespace projectCdv.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+       
     }
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectCdv.PostDetailPage">
+
+    <StackLayout Margin="20,20,20,20" Padding="0,20,0,0">
+        <Label Text="Your experience:"/>
+        <Entry x:Name="experienceEntry" Margin="0,0,0,15" />
+        <Label Text="Country:" />
+        <Entry x:Name="countryEntry" Margin="0,0,0,15" />
+        <Label Text="City:" />
+        <Entry x:Name="cityEntry" Margin="0,0,0,15" />
+        <Label Text="Adress:" />
+        <Entry x:Name="addressEntry" Margin="0,0,0,15" />
+        <Button Text="Update"
+                x:Name="updateButton"
+                Margin="60,20,60,0"
+                Clicked="UpdateButton_Clicked"/>
+        <Button Text="Delete"
+                x:Name="deleteButton"
+                Margin="60,0,60,0"
+                Clicked="DeleteButton_Clicked"/>
+    </StackLayout>
+</ContentPage>

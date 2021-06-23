@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectCdv.MainPage">
+
+    <StackLayout VerticalOptions="Center"
+                 Margin="20">
+        <Entry x:Name="emailEntry"
+               Text="{Binding Email, Mode=TwoWay}"
+               Placeholder="Email address"
+               TextColor="{StaticResource blueColor}"
+               Keyboard="Email"/>
+        <Entry x:Name="passwordEntry"
+               Text="{Binding Password, Mode=TwoWay}"
+               Placeholder="Password"
+               TextColor="{StaticResource blueColor}"
+               IsPassword="True"/>
+        <Button x:Name="LoginButton"
+                Margin="0,50,0,0"
+                Text="Log in"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding User}"
+                Style="{StaticResource normalButton}"/>
+        <Button x:Name="registerUserButton"
+                Text="Register"
+                HorizontalOptions="End"
+                Command="{Binding RegisterNavigationCommand}" />
+    </StackLayout>
+
+</ContentPage>
